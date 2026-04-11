@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWGP Store - Cart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand-container">
+            <img src="https://awgpstore.com/static/logo.png" alt="Product Image" style="width: 50px; height: 50px; border-radius: 50%;">
+            <span class="nav-brand">AWGP Store</span>
+        </a>
+        
+        <div class="nav-search-container">
+            <input type="text" id="search-input" class="search-input" placeholder="Search for products...">
+            <button id="search-btn" class="search-btn">Go</button>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li id="auth-nav-item"><a href="login.html" class="nav-icon" title="Sign In">&#128100;</a></li>
+            <li>
+                <a href="cart.html" class="nav-icon cart-icon-wrapper" title="Cart">
+                    &#128722; <span class="cart-count-badge" id="cart-count">0</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Deliver To Header -->
+    <div class="cart-delivery-banner">
+        <span>Deliver to: <strong id="delivery-user-name">Guest User</strong> - 123 Dummy St, 90210</span>
+        <button class="btn btn-change-addr">Change</button>
+    </div>
+
+    <!-- Main Cart Layout -->
+    <section class="cart-layout">
+        
+        <!-- Left: Cart Items (70%) -->
+        <div class="cart-left">
+            <h2 class="cart-title">Shopping Cart</h2>
+            <div id="cart-items-container">
+                <!-- Javascript will inject list of items here -->
+            </div>
+        </div>
+
+        <!-- Right: Summary (30%) -->
+        <div class="cart-right">
+            <div class="cart-summary sticky-summary">
+                <h3 class="summary-title">Price Details</h3>
+                <hr class="thin-divider">
+                
+                <div class="summary-row">
+                    <span>Price (<span id="summary-items-count">0</span> items)</span>
+                    <span id="summary-subtotal">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Discount</span>
+                    <span id="summary-discount" class="text-success">-$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Delivery Charges</span>
+                    <span id="summary-delivery" class="text-success">Free</span>
+                </div>
+                
+                <hr class="thin-divider">
+                <div class="summary-row total-row">
+                    <span>Total Amount</span>
+                    <span id="summary-total">$0.00</span>
+                </div>
+                <div class="summary-saved" id="summary-saved-msg">
+                    You saved $0 on this order
+                </div>
+
+                <hr class="thin-divider">
+                <div class="coupon-section">
+                    <input type="text" id="coupon-input" class="coupon-input" placeholder="Enter Coupon Code">
+                    <button id="coupon-btn" class="coupon-btn">Apply</button>
+                </div>
+                
+                <button class="btn btn-buy checkout-btn" id="proceed-checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Related Products Scroll Strip -->
+    <div class="extra-section cart-recommended">
+        <h3 class="extra-title">Recommended based on your cart</h3>
+        <div class="related-scroll-container card-box" id="related-products-strip">
+            <!-- Javascript will inject images here -->
+        </div>
+    </div>
+
+    <!-- Mobile Sticky Checkout Bar -->
+    <div class="mobile-checkout-bar" id="mobile-checkout-bar">
+        <div class="mobile-checkout-left">
+            <span class="mobile-total-label">Total</span>
+            <span id="mobile-summary-total" class="mobile-total-price">$0.00</span>
+        </div>
+        <button class="btn btn-buy mobile-proceed-btn" id="mobile-proceed-checkout-btn">Place Order</button>
+    </div>
+
+    <!-- Floating Login Button -->
+    <a href="login.html" id="floating-login-btn" class="floating-login-btn">Login / Signup</a>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>AWGP Store</h3>
+                <p>Welcome to AWGP Store, your destination for spiritual literature, wellness products, and resources that foster holistic development and social upliftment.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.html">Products</a></li>
+                    <li><a href="index.html">Categories</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Categories</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Life Management</a></li>
+                    <li><a href="index.html">Self-help</a></li>
+                    <li><a href="index.html">Philosophy</a></li>
+                    <li><a href="index.html">Health & Fitness</a></li>
+                    <li><a href="index.html">Yoga & Pranayama</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>Haridwar, Uttarakhand<br>India - 249411</p>
+                <p style="margin-top: 10px;">Email: info@awgpstore.com</p>
+                <p>Phone: +91 9258 369727</p>
+                <div class="footer-socials">
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">YouTube</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 AWGP Store | All Rights Reserved
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

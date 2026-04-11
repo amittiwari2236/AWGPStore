@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWGP Store - Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand-container">
+            <img src="https://awgpstore.com/static/logo.png" alt="Product Image" style="width: 50px; height: 50px; border-radius: 50%;">
+            <span class="nav-brand">AWGP Store</span>
+        </a>
+        
+        <div class="nav-search-container">
+            <input type="text" id="search-input" class="search-input" placeholder="Search for products...">
+            <button id="search-btn" class="search-btn">Go</button>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li id="auth-nav-item"><a href="login.html" class="nav-icon" title="Sign In">&#128100;</a></li>
+            <li>
+                <a href="cart.html" class="nav-icon cart-icon-wrapper" title="Cart">
+                    &#128722; <span class="cart-count-badge" id="cart-count">0</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Login Container -->
+    <section class="auth-container">
+        <div class="auth-card">
+            <h2 class="auth-title">Welcome Back</h2>
+            <form class="auth-form" id="login-form">
+                <input type="email" id="login-email" class="auth-input" placeholder="Email Address" required>
+                <input type="password" id="login-password" class="auth-input" placeholder="Password" required>
+                <button type="submit" class="auth-btn">Sign In</button>
+            </form>
+            <p class="auth-link">Don't have an account? <a href="signup.html">Sign Up</a></p>
+        </div>
+    </section>
+
+    <!-- Floating Login Button -->
+    <a href="login.html" id="floating-login-btn" class="floating-login-btn">Login / Signup</a>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>AWGP Store</h3>
+                <p>Welcome to AWGP Store, your destination for spiritual literature, wellness products, and resources that foster holistic development and social upliftment.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.html">Products</a></li>
+                    <li><a href="index.html">Categories</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Categories</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Life Management</a></li>
+                    <li><a href="index.html">Self-help</a></li>
+                    <li><a href="index.html">Philosophy</a></li>
+                    <li><a href="index.html">Health & Fitness</a></li>
+                    <li><a href="index.html">Yoga & Pranayama</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>Haridwar, Uttarakhand<br>India - 249411</p>
+                <p style="margin-top: 10px;">Email: info@awgpstore.com</p>
+                <p>Phone: +91 9258 369727</p>
+                <div class="footer-socials">
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">YouTube</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 AWGP Store | All Rights Reserved
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

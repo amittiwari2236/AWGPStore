@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWGP Store - Product Detail</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand-container">
+            <img src="https://awgpstore.com/static/logo.png" alt="Product Image" style="width: 50px; height: 50px; border-radius: 50%;">
+            <span class="nav-brand">AWGP Store</span>
+        </a>
+        
+        <div class="nav-search-container">
+            <input type="text" id="search-input" class="search-input" placeholder="Search for products...">
+            <button id="search-btn" class="search-btn">Go</button>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li id="auth-nav-item"><a href="login.html" class="nav-icon" title="Sign In">&#128100;</a></li>
+            <li>
+                <a href="cart.html" class="nav-icon cart-icon-wrapper" title="Cart">
+                    &#128722; <span class="cart-count-badge" id="cart-count">0</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Product Detail Container -->
+    <section class="product-detail-section">
+        
+        <!-- Main Split Area -->
+        <div class="product-split">
+            <!-- Left Side: Image & Buttons -->
+            <div class="product-left">
+                <div class="product-img-wrapper">
+                    <img id="detail-img" src="" alt="Product Image" class="detail-main-img">
+                </div>
+                <div class="detail-buttons" style="display: flex; gap: 10px;">
+                    <button class="btn btn-buy" id="detail-buy-now" style="flex: 1;">Buy Now</button>
+                    <div class="cart-interactive-box" id="detail-interactive-box" style="flex: 1;">
+                        <button class="btn btn-cart add-to-cart-action action-btn" id="detail-add-cart" style="width: 100%;">Add to Cart</button>
+                        <div class="qty-controls">
+                            <button class="qty-btn decrement" id="detail-decrement">-</button>
+                            <span class="qty-val" id="detail-qty-val">0</span>
+                            <button class="qty-btn increment" id="detail-increment">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Info -->
+            <div class="product-right">
+                <h1 id="detail-title" class="detail-title">Loading...</h1>
+                <h2 id="detail-price" class="detail-price">---</h2>
+                <p id="detail-desc" class="detail-short-desc">Loading details...</p>
+                <div class="detail-full-desc-container">
+                    <h3>Highlights:</h3>
+                    <ul>
+                        <li id="detail-ul-desc">Please wait while we load product specifics...</li>
+                        <li>High quality guaranteed.</li>
+                        <li>Eligible for quick shipping.</li>
+                        <li>100% Secure Checkout.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Description Section -->
+        <div class="extra-section">
+            <h3 class="extra-title">Product Description</h3>
+            <div class="extra-content card-box">
+                <p>This product represents our commitment to providing the finest quality items to our community. Every piece is carefully inspected to ensure it meets our rigorous standards. Whether for personal use or as a gift, you can be assured of its value and craftsmanship.</p>
+            </div>
+        </div>
+
+        <!-- Reviews Section -->
+        <div class="extra-section">
+            <h3 class="extra-title">Customer Reviews</h3>
+            <div class="reviews-grid">
+                <div class="review-card card-box">
+                    <div class="stars">★★★★★</div>
+                    <h4>Excellent Quality</h4>
+                    <p>Absolutely loved it! It exceeded my expectations completely. Will happily order again.</p>
+                    <small>- Michael R.</small>
+                </div>
+                <div class="review-card card-box">
+                    <div class="stars">★★★★☆</div>
+                    <h4>Very Good</h4>
+                    <p>Great product. The delivery was fast and the packaging was secure.</p>
+                    <small>- Sarah J.</small>
+                </div>
+                <div class="review-card card-box">
+                    <div class="stars">★★★★★</div>
+                    <h4>Perfect!</h4>
+                    <p>Exactly what I was looking for. Fits easily into my spiritual routine.</p>
+                    <small>- David L.</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Products Scroll Strip -->
+        <div class="extra-section">
+            <h3 class="extra-title">Related Products</h3>
+            <div class="related-scroll-container card-box" id="related-products-strip">
+                <!-- Javascript will inject images here -->
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Floating Login Button -->
+    <a href="login.html" id="floating-login-btn" class="floating-login-btn">Login / Signup</a>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>AWGP Store</h3>
+                <p>Welcome to AWGP Store, your destination for spiritual literature, wellness products, and resources that foster holistic development and social upliftment.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.html">Products</a></li>
+                    <li><a href="index.html">Categories</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Categories</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Life Management</a></li>
+                    <li><a href="index.html">Self-help</a></li>
+                    <li><a href="index.html">Philosophy</a></li>
+                    <li><a href="index.html">Health & Fitness</a></li>
+                    <li><a href="index.html">Yoga & Pranayama</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>Haridwar, Uttarakhand<br>India - 249411</p>
+                <p style="margin-top: 10px;">Email: info@awgpstore.com</p>
+                <p>Phone: +91 9258 369727</p>
+                <div class="footer-socials">
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">YouTube</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 AWGP Store | All Rights Reserved
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

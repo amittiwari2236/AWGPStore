@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWGP Store - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand-container">
+            <img src="https://awgpstore.com/static/logo.png" alt="Product Image" style="width: 50px; height: 50px; border-radius: 50%;">
+            <span class="nav-brand">AWGP Store</span>
+        </a>
+        
+        <div class="nav-search-container">
+            <input type="text" id="search-input" class="search-input" placeholder="Search for products...">
+            <button id="search-btn" class="search-btn">Go</button>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li id="auth-nav-item"><a href="login.html" class="nav-icon" title="Sign In">&#128100;</a></li>
+            <li>
+                <a href="cart.html" class="nav-icon cart-icon-wrapper" title="Cart">
+                    &#128722; <span class="cart-count-badge" id="cart-count">0</span>
+                </a>
+            </li>
+            <li>
+                <span class="menu-icon" id="menu-icon">&#9776;</span>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Right Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- Right Sidebar -->
+    <div class="right-sidebar" id="right-sidebar">
+        <div class="sidebar-header">
+            <span class="close-sidebar" id="close-sidebar">&times;</span>
+        </div>
+        
+        <!-- Login/Signup (Top Section) -->
+        <div class="sidebar-auth-section" id="sidebar-auth-section">
+            <a href="login.html" class="sidebar-login-btn">Login / Signup</a>
+        </div>
+
+        <!-- Main Menu -->
+        <ul class="sidebar-menu">
+            <li class="sidebar-item">
+                <a href="index.html">Home</a>
+            </li>
+            <li class="sidebar-item has-dropdown">
+                <div class="sidebar-dropdown-title">Category <span class="drop-icon">&#9662;</span></div>
+                <ul class="sidebar-dropdown-content">
+                    <li><a href="#">Life Management</a></li>
+                    <li><a href="#">Self-help</a></li>
+                    <li><a href="#">Philosophy</a></li>
+                    <li><a href="#">Social Empowerment</a></li>
+                    <li><a href="#">Gayatri Pariwar Related</a></li>
+                    <li><a href="#">Indian Culture</a></li>
+                    <li><a href="#">Parenting and Relation</a></li>
+                    <li><a href="#">Constructing Era</a></li>
+                    <li><a href="#">Yoga and Pranayama</a></li>
+                    <li><a href="#">Science and Spirituality</a></li>
+                    <li><a href="#">Children's</a></li>
+                    <li><a href="#">Teen and Students Spirituality</a></li>
+                    <li><a href="#">Health and Fitness</a></li>
+                    <li><a href="#">Bhajan and Sangeet</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-item has-dropdown">
+                <div class="sidebar-dropdown-title">Products <span class="drop-icon">&#9662;</span></div>
+                <ul class="sidebar-dropdown-content">
+                    <li><a href="#">CD/DVD</a></li>
+                    <li><a href="#">Health Products</a></li>
+                    <li><a href="#">Notebooks</a></li>
+                    <li><a href="#">Stickers</a></li>
+                    <li><a href="#">Table Decoratives</a></li>
+                    <li><a href="#">Gift Items</a></li>
+                    <li><a href="#">Electronics Products</a></li>
+                    <li><a href="#">Vangamaya</a></li>
+                    <li><a href="#">Magazines</a></li>
+                    <li><a href="#">Books</a></li>
+                    <li><a href="#">Photo-frames</a></li>
+                    <li><a href="#">Puja Accessories</a></li>
+                    <li><a href="#">Daily Use</a></li>
+                    <li><a href="#">Combo Set</a></li>
+                    <li><a href="#">Handloom</a></li>
+                    <li><a href="#">Posters</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-item has-dropdown">
+                <div class="sidebar-dropdown-title">Languages <span class="drop-icon">&#9662;</span></div>
+                <ul class="sidebar-dropdown-content">
+                    <!-- Keep EMPTY for now -->
+                </ul>
+            </li>
+        </ul>
+
+        <!-- Aims & Objectives -->
+        <div class="sidebar-section">
+            <h3 class="sidebar-section-title">Aims & Objectives:</h3>
+            <ul class="sidebar-bullet-list">
+                <li>Rise of divinity in human, descent of heaven on earth</li>
+                <li>Individual Development, Family Development and Social Upliftment</li>
+                <li>Healthy body, pure mind and civilized society</li>
+                <li>Atmavat sarvabhooteshu (all living beings are soulkins), Vashudhaiv kutumbkam (Entire earth is our family)</li>
+                <li>One Nation, One Language (love), One Religion (humanity), One Government (Self Govern)</li>
+                <li>Everyone should get equal opportunity for self-growth irrespective of caste, color or creed</li>
+            </ul>
+        </div>
+
+        <!-- Other Links -->
+        <div class="sidebar-section">
+            <h3 class="sidebar-section-title">Other Links</h3>
+            <ul class="sidebar-link-list">
+                <li><a href="#">Origin of Mission</a></li>
+                <li><a href="#">Social Reforms</a></li>
+                <li><a href="#">Vichar Kranti Abhiyaan</a></li>
+                <li><a href="#">Revival of Rishi Tradition</a></li>
+                <li><a href="#">Solemn Pledge Yug Nirman Satsankalpa</a></li>
+                <li><a href="#">Philosophy</a></li>
+                <li><a href="#">History and Achievements</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact Us -->
+        <div class="sidebar-section sidebar-contact">
+            <h3 class="sidebar-section-title">Contact Us</h3>
+            <p><span>&#128205;</span> Gayatri Teerth Shantikunj, Haridwar, Uttarakhand, India - 249411</p>
+            <p><span>&#9993;</span> info@awgpstore.com</p>
+            <p><span>&#128222;</span> +91 9258 369727</p>
+            <p style="margin-top: 10px;">IT Cell, Shantikunj, Haridwar<br>Uttarakhand, India</p>
+        </div>
+    </div>
+
+    <!-- Hero Slider Section -->
+    <section class="hero-slider">
+        <div class="slides-container">
+            <div class="slide active">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhqiyxD-vqQLkrr9pPBADCOcn3R5JhPuZOxo95MhWmYlwAF-d5L0s0MFlqeTXKg5BTNzTp4UYVfSvF8YKH6HrJitQkHTSYIwXX-_6hMjvIyxXFHUR7vhrpACQnv2cYGky9ZO7QXB8RsLwgw/s1600/guruji+and+mataji+%25281%2529.jpg" alt="Meditation and Yoga" class="slide-img">
+            </div>
+            <div class="slide">
+                <img src="https://cdn.wallpapersafari.com/41/30/RJ1tlh.jpg" alt="Spiritual Books" class="slide-img">
+            </div>
+            <div class="slide">
+                <img src="https://img.freepik.com/premium-photo/isolated-vector-hand-holding-glowing-torch-symbolizing-hope-freedom-human-rights-hu_980716-801426.jpg" alt="Incense and Atmosphere" class="slide-img">
+            </div>
+            <div class="slide">
+                <img src="https://www.dsvv.ac.in/wp-content/uploads/2022/01/By-Ved.jpg" alt="Organic Health Products" class="slide-img">
+            </div>
+            <div class="slide">
+                <img src="https://media.holidify.com/images/cmsuploads/compressed/shantikunj-gayatri-parivar-haridwar-tourism-entry-fee-timings-holidays-reviews-header_20241206113038.jpg" alt="Aesthetic Journals" class="slide-img">
+            </div>
+        </div>
+        <div class="slider-dots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+            <span class="dot" data-index="3"></span>
+            <span class="dot" data-index="4"></span>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <h2 class="section-title">Our Products</h2>
+        <div class="product-grid" id="product-grid">
+            <!-- Rendered by script.js -->
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section">
+        <h2 class="section-title">Categories</h2>
+        <div style="text-align: right; margin: 0 2rem; padding: 0 0 0.5rem 0;">
+            <a href="category-all.html" class="category-see-all">See All &gt;</a>
+        </div>
+        
+        <!-- Parent Container -->
+        <div class="category-marquee-parent">
+            <!-- Top Slider -->
+            <div class="category-slider-wrapper">
+
+                <div class="category-slider-track" id="category-track-1">
+                    <div class="category-slide-item"><img src="data:image/jpeg;base64,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" alt="Life Management"></div>
+                    <div class="category-slide-item"><img src="https://counselingtricities.com/wp-content/uploads/2016/09/self-help.jpg?w=640" alt="Self-help"></div>
+                    <div class="category-slide-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQYWtHFpN3jDhwrzbesCuJOQQHFnRpNPXwRA&s" alt="Philosophy"></div>
+                    <div class="category-slide-item"><img src="https://d35xcwcl37xo08.cloudfront.net/current-affairs-wp-uploads/2026/02/Social-Empowerment.webp" alt="Social Empowerment"></div>
+                    <div class="category-slide-item"><img src="https://i.ytimg.com/vi/ueVAIuU2KQk/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCJWW3xfOwwsPIJFQOLsNQX2xi1AA" alt="Gayatri Pariwar Related"></div>
+                    <div class="category-slide-item"><img src="https://miro.medium.com/1*N98rTjniEyoou3DjltRr_Q.png" alt="Indian Culture"></div>
+                    <div class="category-slide-item"><img src="https://i.ytimg.com/vi/WnQHO777KH8/maxresdefault.jpg" alt="Parenting and Relation"></div>
+                    <!-- Duplicate for infinite marquee -->
+                    <div class="category-slide-item"><img src="data:image/jpeg;base64,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" alt="Life Management"></div>
+                    <div class="category-slide-item"><img src="https://counselingtricities.com/wp-content/uploads/2016/09/self-help.jpg?w=640" alt="Self-help"></div>
+                    <div class="category-slide-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQYWtHFpN3jDhwrzbesCuJOQQHFnRpNPXwRA&s" alt="Philosophy"></div>
+                    <div class="category-slide-item"><img src="https://d35xcwcl37xo08.cloudfront.net/current-affairs-wp-uploads/2026/02/Social-Empowerment.webp" alt="Social Empowerment"></div>
+                    <div class="category-slide-item"><img src="https://i.ytimg.com/vi/ueVAIuU2KQk/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCJWW3xfOwwsPIJFQOLsNQX2xi1AA" alt="Gayatri Pariwar Related"></div>
+                    <div class="category-slide-item"><img src="https://miro.medium.com/1*N98rTjniEyoou3DjltRr_Q.png" alt="Indian Culture"></div>
+                    <div class="category-slide-item"><img src="https://i.ytimg.com/vi/WnQHO777KH8/maxresdefault.jpg" alt="Parenting and Relation"></div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Slider -->
+            <div class="category-slider-wrapper">
+
+                <div class="category-slider-track" id="category-track-2">
+                    <div class="category-slide-item"><img src="https://files.awgp.org/public_data/gurukulam/post/7452/75YDqptNgdvTe3_%E0%A4%B5%E0%A4%BF%E0%A4%9C%E0%A5%8D%E0%A4%9E%E0%A4%BE%E0%A4%A8_%E0%A4%95%E0%A5%80_%E0%A4%85%E0%A4%AA%E0%A5%82%E0%A4%B0%E0%A5%8D%E0%A4%A3%E0%A4%A4%E0%A4%BE.jpg" alt="Constructing Era"></div>
+                    <div class="category-slide-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMSPrMsaoJ32huxHudDaZQ9hVmGFy6TO9wDg&s" alt="Yoga and Pranayama"></div>
+                    <div class="category-slide-item"><img src="https://lh3.googleusercontent.com/proxy/DXLcKUTzK771uMvSCYfYytNq5s0NfSmR4vOn9L-AIAEnJP_7y8mf7simllqlhDbscTfdFje3vF_eLvy_3ZEbPU2ngXlmR9A2nIe6lFgVDQ" alt="Science and Spirituality"></div>
+                    <div class="category-slide-item"><img src="https://images.indianexpress.com/2026/02/Childrens-literature-modern-day-princess-1.png?w=1200" alt="Childrens"></div>
+                    <div class="category-slide-item"><img src="https://static.vecteezy.com/system/resources/previews/023/976/034/non_2x/teenagers-students-group-young-teens-highschool-student-friends-learning-together-teenager-with-school-backpack-illustration-vector.jpg" alt="Teen and Students Spirituality"></div>
+                    <div class="category-slide-item"><img src="https://b1984854.smushcdn.com/1984854/wp-content/uploads/sites/22/2023/10/3021347.jpg?lossy=0&strip=1&webp=1" alt="Health and Fitness"></div>
+                    <div class="category-slide-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXvFicf4TZN6C4ASeX9HjO65fGQvT6uj23uA&s" alt="Bhajan and Sangeet"></div>
+                    <!-- Duplicate for infinite marquee -->
+                    <div class="category-slide-item"><img src="https://files.awgp.org/public_data/gurukulam/post/7452/75YDqptNgdvTe3_%E0%A4%B5%E0%A4%BF%E0%A4%9C%E0%A5%8D%E0%A4%9E%E0%A4%BE%E0%A4%A8_%E0%A4%95%E0%A5%80_%E0%A4%85%E0%A4%AA%E0%A5%82%E0%A4%B0%E0%A5%8D%E0%A4%A3%E0%A4%A4%E0%A4%BE.jpg" alt="Constructing Era"></div>
+                    <div class="category-slide-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMSPrMsaoJ32huxHudDaZQ9hVmGFy6TO9wDg&s" alt="Yoga and Pranayama"></div>
+                    <div class="category-slide-item"><img src="https://lh3.googleusercontent.com/proxy/DXLcKUTzK771uMvSCYfYytNq5s0NfSmR4vOn9L-AIAEnJP_7y8mf7simllqlhDbscTfdFje3vF_eLvy_3ZEbPU2ngXlmR9A2nIe6lFgVDQ" alt="Science and Spirituality"></div>
+                    <div class="category-slide-item"><img src="https://images.indianexpress.com/2026/02/Childrens-literature-modern-day-princess-1.png?w=1200" alt="Childrens"></div>
+                    <div class="category-slide-item"><img src="https://static.vecteezy.com/system/resources/previews/023/976/034/non_2x/teenagers-students-group-young-teens-highschool-student-friends-learning-together-teenager-with-school-backpack-illustration-vector.jpg" alt="Teen and Students Spirituality"></div>
+                    <div class="category-slide-item"><img src="https://b1984854.smushcdn.com/1984854/wp-content/uploads/sites/22/2023/10/3021347.jpg?lossy=0&strip=1&webp=1" alt="Health and Fitness"></div>
+                    <div class="category-slide-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXvFicf4TZN6C4ASeX9HjO65fGQvT6uj23uA&s" alt="Bhajan and Sangeet"></div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Ad Banner Section -->
+        <div class="ad-banner-section">
+            <div class="ad-banner-content">
+                <div class="ad-banner-left">
+                    <img src="https://media.istockphoto.com/id/1194343598/vector/bright-modern-mega-sale-banner-for-advertising-discounts-vector-template-for-design-special.jpg?s=612x612&w=0&k=20&c=oxeukxA1kVLBuLtcbipu_94blsVGs9eU0V_x70wkVzA=" alt="Today's Deal">
+                </div>
+                <div class="ad-banner-right" style="position: relative; display: flex; align-items: center;">
+                    <div id="deal-content-container" style="flex: 1; text-align: left;">
+                        <h3 class="ad-banner-title" id="deal-title">Today's Deal</h3>
+                        <p class="ad-banner-text" id="deal-text">Up to 70% OFF on Spiritual Books</p>
+                        <button class="btn btn-buy" style="margin-top: 1rem;">Shop Now</button>
+                    </div>
+                    <button id="deal-next-btn" style="background: none; border: none; font-size: 2.5rem; color: var(--nav-color); cursor: pointer; margin-left: 20px;">&#10095;</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category Preview Section -->
+        <div class="category-preview-grid">
+            <div class="cat-preview-card" data-category="Life Management">
+                <img src="data:image/jpeg;base64,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" alt="Life Management">
+                <h4>Life Management</h4>
+            </div>
+            <div class="cat-preview-card" data-category="Self-help">
+                <img src="https://counselingtricities.com/wp-content/uploads/2016/09/self-help.jpg?w=640" alt="Self-help">
+                <h4>Self-help</h4>
+            </div>
+            <div class="cat-preview-card" data-category="Philosophy">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQYWtHFpN3jDhwrzbesCuJOQQHFnRpNPXwRA&s" alt="Philosophy">
+                <h4>Philosophy</h4>
+            </div>
+            <div class="cat-preview-card" data-category="Social Empowerment">
+                <img src="https://d35xcwcl37xo08.cloudfront.net/current-affairs-wp-uploads/2026/02/Social-Empowerment.webp" alt="Social Empowerment">
+                <h4>Social Empowerment</h4>
+            </div>
+            <div class="cat-preview-card" data-category="Gayatri Pariwar Related">
+                <img src="https://i.ytimg.com/vi/ueVAIuU2KQk/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCJWW3xfOwwsPIJFQOLsNQX2xi1AA" alt="Gayatri Pariwar Related">
+                <h4>Gayatri Pariwar Related</h4>
+            </div>
+            <div class="cat-preview-card" data-category="Indian Culture">
+                <img src="https://miro.medium.com/1*N98rTjniEyoou3DjltRr_Q.png" alt="Indian Culture">
+                <h4>Indian Culture</h4>
+            </div>
+            <div class="cat-preview-card" data-category="Parenting and Relation">
+                <img src="https://i.ytimg.com/vi/WnQHO777KH8/maxresdefault.jpg" alt="Parenting and Relation">
+                <h4>Parenting and Relation</h4>
+            </div>
+            <div class="cat-preview-card" data-category="Constructing Era">
+                <img src="https://files.awgp.org/public_data/gurukulam/post/7452/75YDqptNgdvTe3_%E0%A4%B5%E0%A4%BF%E0%A4%9C%E0%A5%8D%E0%A4%9E%E0%A4%BE%E0%A4%A8_%E0%A4%95%E0%A5%80_%E0%A4%85%E0%A4%AA%E0%A5%82%E0%A4%B0%E0%A5%8D%E0%A4%A3%E0%A4%A4%E0%A4%BE.jpg" alt="Constructing Era">
+                <h4>Constructing Era</h4>
+            </div>
+            <div class="cat-preview-card" data-category="Yoga and Pranayama">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMSPrMsaoJ32huxHudDaZQ9hVmGFy6TO9wDg&s" alt="Yoga and Pranayama">
+                <h4>Yoga and Pranayama</h4>
+            </div>
+            <div class="cat-preview-card" data-category="Science and Spirituality">
+                <img src="https://lh3.googleusercontent.com/proxy/DXLcKUTzK771uMvSCYfYytNq5s0NfSmR4vOn9L-AIAEnJP_7y8mf7simllqlhDbscTfdFje3vF_eLvy_3ZEbPU2ngXlmR9A2nIe6lFgVDQ" alt="Science and Spirituality">
+                <h4>Science and Spirituality</h4>
+            </div>
+            <div class="cat-preview-card" data-category="Children's">
+                <img src="https://images.indianexpress.com/2026/02/Childrens-literature-modern-day-princess-1.png?w=1200" alt="Childrens">
+                <h4>Childrens</h4>
+            </div>
+            <div class="cat-preview-card" data-category="Teen and Students Spirituality">
+                <img src="https://static.vecteezy.com/system/resources/previews/023/976/034/non_2x/teenagers-students-group-young-teens-highschool-student-friends-learning-together-teenager-with-school-backpack-illustration-vector.jpg" alt="Teen and Students Spirituality">
+                <h4>Teen and Students Spirituality</h4>
+            </div>
+            <div class="cat-preview-card" data-category="Health and Fitness">
+                <img src="https://b1984854.smushcdn.com/1984854/wp-content/uploads/sites/22/2023/10/3021347.jpg?lossy=0&strip=1&webp=1" alt="Health and Fitness">
+                <h4>Health and Fitness</h4>
+            </div>
+            <div class="cat-preview-card" data-category="Bhajan and Sangeet">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXvFicf4TZN6C4ASeX9HjO65fGQvT6uj23uA&s" alt="Bhajan and Sangeet">
+                <h4>Bhajan and Sangeet</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Engagement Section -->
+    <section class="engagement-section">
+        <!-- Section 1 (Non-Logged-In) -->
+        <div id="unauth-perks" class="engagement-block">
+            <h2 class="engagement-title">Sign Up for Exclusive Offers!</h2>
+            <div class="engagement-inline-perks">
+                <span>Get Upto 50% Off</span>
+                <span>• Receive Best Deals</span>
+                <span>• New Products & Updates</span>
+            </div>
+            <div class="engagement-subscribe">
+                <input type="email" placeholder="Enter your email address" class="subscribe-input">
+                <button class="btn btn-cart subscribe-btn">Subscribe</button>
+            </div>
+        </div>
+
+        <!-- Section 2 (Logged-In) -->
+        <div id="auth-perks" class="engagement-block" style="display: none;">
+            <h2 class="engagement-title">Benefits of Shopping at AWGP Store</h2>
+            <div class="engagement-inline-perks auth-top-perks">
+                <span>🚚 Free Delivery</span>
+                <span>🔒 Secure Payment</span>
+                <span>📦 Easy Returns</span>
+                <span>⚡ Fast Shipping</span>
+            </div>
+            <div class="engagement-cards-grid">
+                <div class="engagement-card">
+                    <p>✔️ Convenient and free shipping</p>
+                </div>
+                <div class="engagement-card">
+                    <p>📦 Hassle-free returns</p>
+                </div>
+                <div class="engagement-card">
+                    <p>✔️ Assured Products</p>
+                </div>
+                <div class="engagement-card">
+                    <p>🎧 24/7 Support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Delayed Login Modal -->
+    <div id="delayed-login-popup" class="modal-overlay">
+        <div class="modal-box">
+            <span class="close-modal" id="close-delayed-popup">&times;</span>
+            <h2 class="auth-title">Welcome to AWGP Store</h2>
+            <p style="margin-bottom: 2rem; color: var(--secondary-text);">Login or Signup to continue</p>
+            <div class="modal-btns">
+                <a href="login.html" class="btn auth-btn-popup" style="background-color: var(--btn-buy); display: block; text-decoration: none; padding: 1rem; color: white; text-align: center; margin-bottom: 1rem;">Login</a>
+                <a href="signup.html" class="btn auth-btn-popup" style="background-color: var(--btn-cart); display: block; text-decoration: none; padding: 1rem; color: white; text-align: center;">Signup</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Login Button -->
+    <a href="login.html" id="floating-login-btn" class="floating-login-btn">Login / Signup</a>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>AWGP Store</h3>
+                <p>Welcome to AWGP Store, your destination for spiritual literature, wellness products, and resources that foster holistic development and social upliftment.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.html">Products</a></li>
+                    <li><a href="index.html">Categories</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Categories</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Life Management</a></li>
+                    <li><a href="index.html">Self-help</a></li>
+                    <li><a href="index.html">Philosophy</a></li>
+                    <li><a href="index.html">Health & Fitness</a></li>
+                    <li><a href="index.html">Yoga & Pranayama</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>Haridwar, Uttarakhand<br>India - 249411</p>
+                <p style="margin-top: 10px;">Email: info@awgpstore.com</p>
+                <p>Phone: +91 9258 369727</p>
+                <div class="footer-socials">
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">YouTube</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 AWGP Store | All Rights Reserved
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWGP Store - About Us</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand-container">
+            <img src="https://awgpstore.com/static/logo.png" alt="Product Image" style="width: 50px; height: 50px; border-radius: 50%;">
+            <span class="nav-brand">AWGP Store</span>
+        </a>
+        
+        <div class="nav-search-container">
+            <input type="text" id="search-input" class="search-input" placeholder="Search for products...">
+            <button id="search-btn" class="search-btn">Go</button>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li id="auth-nav-item"><a href="login.html" class="nav-icon" title="Sign In">&#128100;</a></li>
+            <li>
+                <a href="cart.html" class="nav-icon cart-icon-wrapper" title="Cart">
+                    &#128722; <span class="cart-count-badge" id="cart-count">0</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Category Header -->
+    <section class="about-banner" style="padding: 4rem 2rem; text-align: center;">
+        <h1 id="category-title" style="text-transform: capitalize;">HANDLOOM Collection</h1>
+    </section>
+
+    <!-- Category Products Grid -->
+    <section class="products-section" style="min-height: 50vh;">
+        <div class="product-grid" id="handloom-product-grid">
+            <!-- Products injected dynamically via inline script -->
+        </div>
+    </section>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        let storedProducts = JSON.parse(localStorage.getItem('awgp_products')) || [];
+        
+        // Generate 32 unique CD/DVD items
+        const handloomProducts = [];
+        const images = [
+            "https://awgpstore.com/static/data/inventory/items/DV151/Amritwani-Vangmay.jpg",
+            "https://images.unsplash.com/photo-1614051022137-5f778d58c8ec?auto=format&fit=crop&w=400&h=300",
+            "https://images.unsplash.com/photo-1629555026935-77983ea1c2a1?auto=format&fit=crop&w=400&h=300",
+            "https://images.unsplash.com/photo-1598014523315-e2089b251a37?auto=format&fit=crop&w=400&h=300"
+        ];
+        for(let i = 1; i <= 22; i++) {
+            handloomProducts.push({
+                id: 'handloom-' + i,
+                name: 'HANDLOOM Item ' + i,
+                price: '$' + (15 + (i % 5)*5) + '.99',
+                image: images[i % images.length],
+                stock: 50,
+                description: 'Premium HANDLOOM collection item ' + i,
+                fullDesc: 'High quality HANDLOOM designed to enrich your life and collection.'
+            });
+        }
+
+        // Append to localStorage if not exists so addToCart inside script.js resolves them
+        let changed = false;
+        handloomProducts.forEach(newP => {
+            if (!storedProducts.find(p => p.id === newP.id)) {
+                storedProducts.push(newP);
+                changed = true;
+            }
+        });
+        if (changed) {
+            localStorage.setItem('awgp_products', JSON.stringify(storedProducts));
+        }
+
+        // Render the grid
+        const grid = document.getElementById('handloom-product-grid');
+        if (!grid) return;
+
+        // Get current cart to check quantities matching script.js sync
+        const users = JSON.parse(localStorage.getItem('awgp_users')) || [];
+        const session = JSON.parse(localStorage.getItem('awgp_session')) || null;
+        let currentUser = session ? users.find(u => u.email === session.email) : null;
+        const cartKey = currentUser ? `awgp_cart_${currentUser.email}` : 'awgp_cart_guest';
+        let cart = JSON.parse(localStorage.getItem(cartKey)) || [];
+
+        handloomProducts.forEach(prod => {
+            const itemInCart = cart.find(item => item.name === prod.name);
+            const qty = itemInCart ? itemInCart.quantity : 0;
+            const hasQtyClass = qty > 0 ? "has-qty" : "";
+
+            const card = document.createElement('div');
+            card.className = 'product-card';
+            card.dataset.id = prod.id;
+            card.innerHTML = `
+                <img src="${prod.image}" alt="${prod.name}" class="product-image clickable-product" data-id="${prod.id}" data-name="${prod.name}">
+                <h3 class="product-category clickable-product" data-id="${prod.id}" data-name="${prod.name}">${prod.name}</h3>
+                <p class="detail-price" style="font-size: 1.2rem; color: var(--btn-buy); margin-top:0.5rem; margin-bottom: 1rem;">${prod.price}</p>
+                <div class="card-buttons" style="gap: 10px; flex-direction: row; display: flex;">
+                    <button class="btn btn-buy clickable-product" data-id="${prod.id}" data-name="${prod.name}" style="flex: 1;">Buy Now</button>
+                    <div class="cart-interactive-box ${hasQtyClass}" data-parent-product="${prod.name}" style="flex: 1;">
+                        <button class="btn btn-cart add-to-cart-action action-btn" data-name="${prod.name}" style="width: 100%;">Add to Cart</button>
+                        <div class="qty-controls">
+                            <button class="qty-btn decrement" data-name="${prod.name}">-</button>
+                            <span class="qty-val" data-name="${prod.name}" id="qty-val-${prod.name.replace(/\s+/g, '-')}">${qty}</span>
+                            <button class="qty-btn increment" data-name="${prod.name}">+</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+    });
+    </script>
+
+    <!-- Floating Login Button -->
+    <a href="login.html" id="floating-login-btn" class="floating-login-btn">Login / Signup</a>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>AWGP Store</h3>
+                <p>Welcome to AWGP Store, your destination for spiritual literature, wellness products, and resources that foster holistic development and social upliftment.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.html">Products</a></li>
+                    <li><a href="index.html">Categories</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Categories</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Life Management</a></li>
+                    <li><a href="index.html">Self-help</a></li>
+                    <li><a href="index.html">Philosophy</a></li>
+                    <li><a href="index.html">Health & Fitness</a></li>
+                    <li><a href="index.html">Yoga & Pranayama</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>Haridwar, Uttarakhand<br>India - 249411</p>
+                <p style="margin-top: 10px;">Email: info@awgpstore.com</p>
+                <p>Phone: +91 9258 369727</p>
+                <div class="footer-socials">
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">YouTube</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 AWGP Store | All Rights Reserved
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

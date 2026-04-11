@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWGP Store - Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="admin-body">
+
+    <!-- Admin Navbar -->
+    <nav class="navbar admin-navbar">
+        <a href="index.html" class="nav-brand-container">
+            <img src="https://awgpstore.com/static/logo.png" alt="Product Image" style="width: 50px; height: 50px; border-radius: 50%;">
+            <span class="nav-brand">AWGP Store</span> <span style="font-size: 1rem; opacity: 0.8; font-weight: 400; margin-left: 10px; color: white;">| Admin</span>
+        </a>
+        
+        <div class="nav-links">
+            <div class="dropdown">
+                <div class="dropdown-title" style="color: white; padding: 0.5rem; font-weight: 600;">
+                    <i class="fa fa-user-circle"></i> Admin User &#9662;
+                </div>
+                <div class="dropdown-content">
+                    <span class="logout-btn" id="admin-logout-btn">Logout</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Layout Container -->
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <div class="admin-sidebar">
+            <ul class="sidebar-menu">
+                <li class="sidebar-item" data-target="dashboard"><i class="fa fa-home"></i> Dashboard</li>
+                <li class="sidebar-item active" data-target="products"><i class="fa fa-box"></i> Products</li>
+                <li class="sidebar-item" data-target="users"><i class="fa fa-users"></i> Users</li>
+                <li class="sidebar-item" data-target="orders"><i class="fa fa-shopping-cart"></i> Orders</li>
+                <li class="sidebar-item" data-target="analytics"><i class="fa fa-chart-line"></i> Analytics</li>
+                <li class="sidebar-item" data-target="coupons"><i class="fa fa-ticket-alt"></i> Coupons</li>
+                <li class="sidebar-item" data-target="settings"><i class="fa fa-cog"></i> Settings</li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="admin-main-content">
+            
+            <!-- Dashboard Section -->
+            <section id="section-dashboard" class="admin-section" style="display: none;">
+                <h2 class="admin-title">Dashboard Overview</h2>
+                <div class="admin-placeholder-box">Welcome to the AWGP Store Admin Panel. Select an option from the sidebar to manage your store.</div>
+            </section>
+
+            <!-- Products Section -->
+            <section id="section-products" class="admin-section active-section">
+                <div class="admin-section-header">
+                    <h2 class="admin-title">Manage Products</h2>
+                    <button class="btn btn-primary" id="btn-add-product"><i class="fa fa-plus"></i> Add Product</button>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="admin-table" id="products-table">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Stock</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-product-list">
+                            <!-- Products injected here via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Users Section -->
+            <section id="section-users" class="admin-section" style="display: none;">
+                <h2 class="admin-title">Manage Users</h2>
+                <div class="table-responsive">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Orders</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Rahul Sharma</td>
+                                <td>rahul@example.com</td>
+                                <td>5</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                            </tr>
+                            <tr>
+                                <td>Anjali Verma</td>
+                                <td>anjali@example.com</td>
+                                <td>2</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                            </tr>
+                            <tr>
+                                <td>Suresh Kumar</td>
+                                <td>suresh@example.com</td>
+                                <td>0</td>
+                                <td><span class="status-badge status-blocked">Blocked</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Orders Section -->
+            <section id="section-orders" class="admin-section" style="display: none;">
+                <h2 class="admin-title">Manage Orders</h2>
+                <div class="table-responsive">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>User</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#ORD-8923</td>
+                                <td>Rahul Sharma</td>
+                                <td>$129.99</td>
+                                <td><span class="status-badge status-active">Delivered</span></td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-8924</td>
+                                <td>Anjali Verma</td>
+                                <td>$45.00</td>
+                                <td><span class="status-badge status-pending">Processing</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Analytics Section -->
+            <section id="section-analytics" class="admin-section" style="display: none;">
+                <h2 class="admin-title">Analytics</h2>
+                
+                <div class="analytics-grid">
+                    <div class="analytics-chart admin-card-box">
+                        <h3>User Growth (Simulated)</h3>
+                        <div class="chart-placeholder">
+                            <div class="bar" style="height: 40%"><span>Jan</span></div>
+                            <div class="bar" style="height: 60%"><span>Feb</span></div>
+                            <div class="bar" style="height: 50%"><span>Mar</span></div>
+                            <div class="bar" style="height: 80%"><span>Apr</span></div>
+                            <div class="bar" style="height: 100%"><span>May</span></div>
+                        </div>
+                    </div>
+                    <div class="analytics-stats">
+                        <div class="stat-card admin-card-box">
+                            <h4>Total Users</h4>
+                            <div class="stat-value">1,245</div>
+                        </div>
+                        <div class="stat-card admin-card-box">
+                            <h4>Active Users</h4>
+                            <div class="stat-value">840</div>
+                        </div>
+                        <div class="stat-card admin-card-box location-stats">
+                            <h4>Location-wise Users</h4>
+                            <ul class="location-list">
+                                <li><span>UP</span> <span>120</span></li>
+                                <li><span>Delhi</span> <span>80</span></li>
+                                <li><span>Maharashtra</span> <span>65</span></li>
+                                <li><span>Karnataka</span> <span>42</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Coupons Section -->
+            <section id="section-coupons" class="admin-section" style="display: none;">
+                <h2 class="admin-title">Manage Coupons</h2>
+                <div class="admin-card-box" style="max-width: 500px;">
+                    <h3>Create New Coupon</h3>
+                    <div class="form-group">
+                        <label>Coupon Code</label>
+                        <input type="text" id="new-coupon-code" class="admin-input" placeholder="e.g. SUMMER20">
+                    </div>
+                    <div class="form-group">
+                        <label>Discount (%)</label>
+                        <input type="number" id="new-coupon-discount" class="admin-input" placeholder="20">
+                    </div>
+                    <button class="btn btn-primary" id="btn-save-coupon">Save Coupon</button>
+                </div>
+                
+                <h3 class="admin-subtitle" style="margin-top: 2rem;">Active Coupons</h3>
+                <ul class="coupon-list" id="active-coupons-list">
+                    <!-- Loaded via JS -->
+                </ul>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="section-settings" class="admin-section" style="display: none;">
+                <h2 class="admin-title">Settings</h2>
+                <div class="admin-placeholder-box">
+                    <p>General store settings, payment gateways, and shipping configurations will appear here.</p>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Add/Edit Product Modal -->
+    <div id="product-modal" class="admin-modal">
+        <div class="modal-content">
+            <h2 id="modal-title" class="admin-title" style="margin-top: 0;">Add Product</h2>
+            <form id="product-form">
+                <input type="hidden" id="product-id">
+                <div class="form-group">
+                    <label>Product Name</label>
+                    <input type="text" id="product-name" class="admin-input" required>
+                </div>
+                <div class="form-group">
+                    <label>Price</label>
+                    <input type="text" id="product-price" class="admin-input" placeholder="e.g. $19.99" required>
+                </div>
+                <div class="form-group">
+                    <label>Image URL</label>
+                    <input type="text" id="product-image" class="admin-input" required>
+                </div>
+                <div class="form-group">
+                    <label>Category / Short Description</label>
+                    <input type="text" id="product-category" class="admin-input" required>
+                </div>
+                <div class="form-group">
+                    <label>Stock</label>
+                    <input type="number" id="product-stock" class="admin-input" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="btn-cancel-modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="btn-save-product">Save Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Floating Login Button -->
+    <a href="login.html" id="floating-login-btn" class="floating-login-btn">Login / Signup</a>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>AWGP Store</h3>
+                <p>Welcome to AWGP Store, your destination for spiritual literature, wellness products, and resources that foster holistic development and social upliftment.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.html">Products</a></li>
+                    <li><a href="index.html">Categories</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Categories</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Life Management</a></li>
+                    <li><a href="index.html">Self-help</a></li>
+                    <li><a href="index.html">Philosophy</a></li>
+                    <li><a href="index.html">Health & Fitness</a></li>
+                    <li><a href="index.html">Yoga & Pranayama</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>Haridwar, Uttarakhand<br>India - 249411</p>
+                <p style="margin-top: 10px;">Email: info@awgpstore.com</p>
+                <p>Phone: +91 9258 369727</p>
+                <div class="footer-socials">
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">YouTube</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 AWGP Store | All Rights Reserved
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
