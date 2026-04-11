@@ -713,60 +713,68 @@ document.addEventListener('DOMContentLoaded', () => {
                 currentDealIndex = (currentDealIndex + 1) % deals.length;
                 const nextDeal = deals[currentDealIndex];
                 
-                // Clone Text Box for simultaneous smooth sliding
-                const nextContentBox = dealContentBox.cloneNode(true);
-                nextContentBox.querySelector('#deal-title').textContent = nextDeal.title;
-                nextContentBox.querySelector('#deal-text').textContent = nextDeal.desc;
-                nextContentBox.style.position = 'absolute';
-                nextContentBox.style.top = dealContentBox.offsetTop + 'px';
-                nextContentBox.style.left = dealContentBox.offsetLeft + 'px';
-                nextContentBox.style.width = dealContentBox.offsetWidth + 'px';
-                nextContentBox.style.height = dealContentBox.offsetHeight + 'px';
-                nextContentBox.style.transform = 'translateX(100%)';
-                nextContentBox.style.transition = 'transform 0.5s ease-in-out';
-                nextContentBox.style.backgroundColor = 'var(--card-bg)'; 
-                nextContentBox.style.zIndex = '1';
-                adBannerRight.appendChild(nextContentBox);
-
-                // Setup Image Box (Left to Right)
+                // Preload image to prevent flicker/delay mismatch
                 const nextImg = document.createElement('img');
-                nextImg.src = nextDeal.img;
-                nextImg.alt = nextDeal.title;
-                nextImg.style.position = 'absolute';
-                nextImg.style.top = '0';
-                nextImg.style.left = '-100%';
-                nextImg.style.width = '100%';
-                nextImg.style.height = '100%';
-                nextImg.style.objectFit = 'cover';
-                nextImg.style.transition = 'transform 0.5s ease-in-out';
-                adBannerLeft.appendChild(nextImg);
+                nextImg.onload = () => {
+                    // Clone Text Box for simultaneous smooth sliding
+                    const nextContentBox = dealContentBox.cloneNode(true);
+                    nextContentBox.querySelector('#deal-title').textContent = nextDeal.title;
+                    nextContentBox.querySelector('#deal-text').textContent = nextDeal.desc;
+                    nextContentBox.style.position = 'absolute';
+                    nextContentBox.style.top = dealContentBox.offsetTop + 'px';
+                    nextContentBox.style.left = dealContentBox.offsetLeft + 'px';
+                    nextContentBox.style.width = dealContentBox.offsetWidth + 'px';
+                    nextContentBox.style.height = dealContentBox.offsetHeight + 'px';
+                    nextContentBox.style.transform = 'translateX(100%)';
+                    nextContentBox.style.transition = 'transform 0.5s ease-in-out';
+                    nextContentBox.style.backgroundColor = 'var(--card-bg)'; 
+                    nextContentBox.style.zIndex = '1';
+                    adBannerRight.appendChild(nextContentBox);
+
+                    // Setup Image Box (Left to Right)
+                    nextImg.alt = nextDeal.title;
+                    nextImg.style.position = 'absolute';
+                    nextImg.style.top = '0';
+                    nextImg.style.left = '-100%';
+                    nextImg.style.width = '100%';
+                    nextImg.style.height = '100%';
+                    nextImg.style.objectFit = 'cover';
+                    nextImg.style.transition = 'transform 0.5s ease-in-out';
+                    adBannerLeft.appendChild(nextImg);
+                    
+                    dealContentBox.style.transition = 'transform 0.5s ease-in-out';
+
+                    // Force browser redraw before starting animation
+                    void nextImg.offsetWidth; 
+                    void nextContentBox.offsetWidth;
+
+                    // Animate simultaneously
+                    activeImg.style.transform = 'translateX(100%)';
+                    nextImg.style.transform = 'translateX(100%)';
+                    dealContentBox.style.transform = 'translateX(-100%)';
+                    nextContentBox.style.transform = 'translateX(0)';
+
+                    setTimeout(() => {
+                        try { activeImg.remove(); } catch(e){}
+                        nextImg.style.position = 'relative';
+                        nextImg.style.left = '0';
+                        nextImg.style.transform = 'none';
+                        activeImg = nextImg; 
+                        
+                        dealTitle.textContent = nextDeal.title;
+                        dealText.textContent = nextDeal.desc;
+                        dealContentBox.style.transition = 'none';
+                        dealContentBox.style.transform = 'none';
+                        try { nextContentBox.remove(); } catch(e){}
+                        
+                        dealNextBtn.disabled = false;
+                    }, 500);
+                };
                 
-                dealContentBox.style.transition = 'transform 0.5s ease-in-out';
-
-                void nextImg.offsetWidth; 
-                void nextContentBox.offsetWidth;
-
-                // Animate simultaneously
-                activeImg.style.transform = 'translateX(100%)';
-                nextImg.style.transform = 'translateX(100%)';
-                dealContentBox.style.transform = 'translateX(-100%)';
-                nextContentBox.style.transform = 'translateX(0)';
-
-                setTimeout(() => {
-                    try { activeImg.remove(); } catch(e){}
-                    nextImg.style.position = 'relative';
-                    nextImg.style.left = '0';
-                    nextImg.style.transform = 'none';
-                    activeImg = nextImg; 
-                    
-                    dealTitle.textContent = nextDeal.title;
-                    dealText.textContent = nextDeal.desc;
-                    dealContentBox.style.transition = 'none';
-                    dealContentBox.style.transform = 'none';
-                    try { nextContentBox.remove(); } catch(e){}
-                    
-                    dealNextBtn.disabled = false;
-                }, 500);
+                // If the image fails to load, still reset the button to prevent locking
+                nextImg.onerror = () => { dealNextBtn.disabled = false; };
+                
+                nextImg.src = nextDeal.img;
             });
         }
     }

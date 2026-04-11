@@ -1759,11 +1759,11 @@ footer {
 @media (max-width: 768px) {
     .ad-banner-content {
         flex-direction: column;
-        height: 450px;
+        height: 380px;
     }
     .ad-banner-left {
         width: 100%;
-        height: 200px;
+        height: 180px;
         flex: none;
     }
 }
@@ -2051,19 +2051,11 @@ footer {
         padding: 10px 15px !important;
         flex-wrap: nowrap !important;
         height: auto !important;
-        gap: 10px !important;
+        gap: 0 !important;
     }
     
     .nav-links {
-        display: flex !important;
-        order: 1 !important; /* LEFT */
-        flex: 0 0 auto !important;
-        gap: 15px !important;
-        width: auto !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        align-items: center !important;
-        flex-direction: row-reverse !important; /* Put Hamburger to the far left, Cart icon next to it */
+        display: contents !important;
     }
     
     .nav-links > li:nth-child(1),
@@ -2072,30 +2064,35 @@ footer {
         display: none !important; /* Hide Home, About, Sign In to match design */
     }
 
+    .nav-links > li:nth-child(5) {
+        order: 1 !important; /* Hamburger */
+        display: flex !important;
+        margin-right: 15px !important;
+    }
+
     .nav-brand-container {
-        order: 2 !important; /* CENTER */
-        flex: 1 1 auto !important;
-        justify-content: center !important;
-        text-align: center !important;
-        margin: 0 !important;
+        order: 2 !important; /* Logo */
+        flex: 0 0 auto !important;
+        justify-content: flex-start !important;
+        margin-right: 15px !important;
     }
     
     .nav-brand {
-        display: none !important; /* Show only logo image to save space and center perfectly */
+        display: none !important; /* Show only logo image to save space */
     }
 
     .nav-search-container {
-        order: 3 !important; /* RIGHT */
-        flex: 0 0 auto !important;
-        width: auto !important;
-        max-width: 140px !important;
-        margin: 0 !important;
+        order: 3 !important; /* Search */
+        flex: 1 1 auto !important;
+        width: 100% !important;
+        max-width: none !important;
+        margin-right: 15px !important;
         display: flex !important;
     }
 
     .search-input {
-        width: 100px !important;
-        min-width: 100px !important;
+        width: 100% !important;
+        min-width: 0 !important;
         padding: 6px 10px !important;
         font-size: 0.85rem !important;
         border-radius: var(--border-radius-btn) 0 0 var(--border-radius-btn) !important;
@@ -2109,10 +2106,16 @@ footer {
         border-radius: 0 var(--border-radius-btn) var(--border-radius-btn) 0 !important;
     }
 
+    .nav-links > li:nth-child(4) {
+        order: 4 !important; /* Cart */
+        display: flex !important;
+        margin-right: 0 !important;
+    }
+
     /* 2. Hero Section */
     .hero-slider {
         height: 35vh !important;
-        max-width: 100vw !important;
+        max-width: 100% !important;
         margin: 0 !important;
         padding: 0 !important;
         border-radius: 0 !important;
@@ -2121,8 +2124,8 @@ footer {
     .hero-slider .slides-container,
     .hero-slider .slide-img,
     .hero-slider .slide {
-        width: 100vw !important;
-        min-width: 100vw !important;
+        width: 100% !important;
+        min-width: 100% !important;
         border-radius: 0 !important;
         margin: 0 !important;
         object-fit: cover !important;
@@ -2131,6 +2134,7 @@ footer {
 
     section.hero-slider {
         padding: 0 !important;
+        overflow: hidden !important;
     }
 
     /* 3. Products Grid */
